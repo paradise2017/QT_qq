@@ -1,0 +1,4 @@
+﻿  rcc CCMainWindow.qrc
+  talkwindowshell.cpp
+  qrc_CCMainWindow.cpp
+  QtWidgetsApplicationQQ.vcxproj -> C:\Users\Administrator\Desktop\test\QtWidgetsApplicationQQ\x64\Debug\QtWidgetsApplicationQQ.exe
