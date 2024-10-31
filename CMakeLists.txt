@@ -1,10 +1,10 @@
 ﻿cmake_minimum_required (VERSION 3.0)
 
 # 项目名称 最终生成的sln文件
-project ("QQ_Server")
+project ("QQ_Client")
 
 # 可执行程序的名字
-set(EXE_NAME QQ_Server_EXE)
+set(EXE_NAME QQ_Client_EXE)
 
 # QT 必须设置选项
 set(CMAKE_AUTOMOC ON)
@@ -22,9 +22,8 @@ ${CMAKE_CURRENT_SOURCE_DIR}
 
 # 提供位置定位.cmake文件  QTDIR 系统的环境变量
 set(Qt5_DIR "C:/Qt/Qt5.14.2/5.14.2/msvc2017_64")
-
 # QT的包
-find_package(Qt5 COMPONENTS Gui Core Widgets SerialPort Network Sql REQUIRED)
+find_package(Qt5 COMPONENTS Gui Core Widgets SerialPort Network Sql WebEngineWidgets Xml REQUIRED)
 
 # 头文件搜索路径
 include_directories(
@@ -35,13 +34,15 @@ include_directories(
 file(GLOB SRC ${HEAD_PATH}/*.cpp)
 file(GLOB HEADER ${HEAD_PATH}/*.h)
 
-# 链接路径
+# 链接库路径
 link_directories(
 ${Qt5_DIR}/lib
 )
-# 添加可执行文件
-add_executable(${EXE_NAME} ${SRC} ${HEADER} QtQQ_Server.qrc QtQQ_Server.ui)
-# 链接库
+
+# 生成可执行文件
+add_executable(${EXE_NAME} ${SRC} ${HEADER} CCMainWindow.qrc CCMainWindow.ui ContactItem.ui EmotionWindow.ui ReceiveFile.ui SendFile.ui SkinWindow.ui TalkWindow.ui TalkWindowItem.ui TalkWindowShell.ui UserLogin.ui)
+
+# 链接路径
 target_link_libraries(${EXE_NAME} 
     Qt5::Gui 
     Qt5::Core 
@@ -49,4 +50,7 @@ target_link_libraries(${EXE_NAME}
     Qt5::SerialPort 
     Qt5::Network
     Qt5::Sql
+    Qt5::WebEngineWidgets
+    Qt5::Xml
 )
+
