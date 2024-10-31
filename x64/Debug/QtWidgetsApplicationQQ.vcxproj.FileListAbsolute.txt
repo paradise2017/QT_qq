@@ -1,2 +1,0 @@
-C:\Users\Administrator\source\repos\QtWidgetsApplicationQQ\x64\Debug\QtWidgetsApplicationQQ.exe
-C:\Users\Administrator\Desktop\test\QtWidgetsApplicationQQ\x64\Debug\QtWidgetsApplicationQQ.exe
